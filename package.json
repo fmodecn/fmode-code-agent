@@ -1,0 +1,28 @@
+{
+  "name": "skill-code-agent",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "fmode-code-agent 规则库：纯 JS 网页版 Bot 智能体开发规范（Agent/MCP/Skill 三层 / LangGraph 无构建 / 浏览器端 MCP / token 实测 / 自动部署）。随 npm 分发，含全局技能与脚手架。",
+  "keywords": ["agent", "mcp", "skill", "langgraph", "no-build", "esm", "browser", "rules", "fmode"],
+  "license": "MPL-2.0",
+  "files": [
+    "skills",
+    "docs",
+    "examples",
+    ".claude",
+    "README.md",
+    "CLAUDE.md"
+  ],
+  "exports": {
+    ".": "./CLAUDE.md",
+    "./rules/*": "./.claude/rules/*"
+  },
+  "bin": {
+    "fmode-code-agent": "skills/fmode-code-agent/scripts/install.mjs"
+  },
+  "scripts": {
+    "smoke": "node skills/fmode-code-agent/scripts/smoke.mjs",
+    "install-skill": "node skills/fmode-code-agent/scripts/install.mjs install --force",
+    "install-rules": "node skills/fmode-code-agent/scripts/install-rules.mjs"
+  }
+}

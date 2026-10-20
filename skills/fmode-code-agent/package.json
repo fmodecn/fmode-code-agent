@@ -1,0 +1,38 @@
+{
+  "name": "fmode-code-agent",
+  "version": "0.1.0",
+  "description": "Claude Code 技能：纯 JS 网页版 Bot 智能体开发（Agent/MCP/Skill 三层、LangGraph 无构建、浏览器端 MCP、token 实测、自动部署）。提供规则安装器与项目脚手架。",
+  "type": "module",
+  "bin": {
+    "fmode-code-agent": "bin/fmode-code-agent.js"
+  },
+  "scripts": {
+    "smoke": "node skills/fmode-code-agent/scripts/smoke.mjs"
+  },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "skill-package-manifest.json",
+    "skills/"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-skill",
+    "fmode",
+    "agent",
+    "mcp",
+    "skill",
+    "langgraph",
+    "no-build",
+    "native-esm",
+    "importmap",
+    "telemetry"
+  ],
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@git.fmode.cn/fmode/fmode-code-agent.git"
+  },
+  "homepage": "https://git.fmode.cn/fmode/fmode-code-agent"
+}
