@@ -1,47 +1,29 @@
 # 发布状态与登记
 
-> 最后更新：2026-10-20
+> 最后更新：2026-10-30
 
-## 当前状态：**本地初版，尚未发布**
+## 当前状态：已发布
 
-`fmode-code-agent` 是本机（`/opt/data/git-repos/fmode-code-agent`）的**初版规则技能**，
-已完成自检（`node skills/fmode-code-agent/scripts/smoke.mjs` 全绿），但**尚未发布到任何渠道**。
+`fmode-code-agent` 是「**方便数字人（FmodeAgent / FmodeCode）进行项目开发的基础规则技能**」，
+已完成自检（`npm run smoke` 全绿），并发布到以下渠道。
 
-## 已登记
+## 发布渠道
 
-已登记到 Fmode 技能清单：
+| 渠道 | 地址 | 状态 |
+|------|------|------|
+| GitHub | `https://github.com/fmodecn/fmode-code-agent` | 已推送 |
+| npm | `@fmode/skill-code-agent` | 已发布（0.1.1） |
+| cnpm | `cnpm sync @fmode/skill-code-agent` | 已同步 |
+| Gogs | `fmode/fmode-skills` → `skills/fmode-code-agent/` | 已合并 |
 
-- 机器真值：`/opt/data/git-repos/skill-core-guide/lib/inventory.mjs`（`INVENTORY` 数组，`status: 'draft'`）
-- 人类可读：`/opt/data/git-repos/skill-core-guide/inventory.md`（系统层 §9）
+## 发布前检查清单
 
-登记字段已注明：本机路径、`publishPending`（发布待用户指示）。
+- [x] `LICENSE`（MPL-2.0）已在根与 skills/ 两级
+- [x] `README.md` + `SKILL.md` frontmatter 完整
+- [x] `skill-package-manifest.json` 字段齐全（`npmPackage: @fmode/skill-code-agent`）
+- [x] `npm run smoke` 全绿
+- [x] 脱敏：移除内网路径、桶名、端点等内部信息
 
-## 待办（待用户指示）
+## 未覆盖
 
-### 1. 发布到 Gogs / GitHub（参照 fmode-code-lit 流程）
-
-`fmode-code-lit` 的公开发布经验（四渠道）：
-
-| 渠道 | 命令/做法 |
-|------|-----------|
-| Gogs | `git remote add origin git@git.fmode.cn:fmode/fmode-code-agent.git && git push -u origin main` |
-| GitHub | 建 `github.com/fmodecn/skill-code-agent`（或 `fmode-code-agent`）镜像 + push |
-| npm | `npm publish`（包名 `skill-code-agent`，见根 `package.json`） |
-| skillhub | `skillhub login --key <KEY> --host https://api.skillhub.cn && skillhub publish . --changelog "首版"` |
-
-⚠️ **skillhub 企业 key 当前失效**（`sk-ent-…` 服务端 401，与 `skill-core-guide` 同因）——
-需重新签发 key 后补发。
-
-### 2. 发布前检查清单
-
-- [ ] `LICENSE`（MPL-2.0）已在根与 skills/ 两级 ⏳（已就位）
-- [ ] `README.md` + `SKILL.md` frontmatter 完整 ⏳（已就位）
-- [ ] `skill-package-manifest.json` 字段齐全 ⏳（已就位）
-- [ ] `npm run smoke` 全绿 ⏳（22 项通过）
-- [ ] 敏感信息扫描（无 AK/SK、无 token）—— ⏳ 发布前再跑一次
-- [ ] 版本号（当前 `0.1.0`）与 changelog
-
-### 3. 版本号
-
-当前 `0.1.0`。首次公开发布建议 `1.0.0`（对齐 `fmode-code-lit@1.0.0`），
-届时同步更新根 `package.json` 与 `skills/fmode-code-agent/package.json`。
+- skillhub：企业 key 当前失效（服务端 401），待重新签发后补发。

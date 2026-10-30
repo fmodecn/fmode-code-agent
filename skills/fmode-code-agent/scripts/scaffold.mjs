@@ -319,9 +319,9 @@ add('scripts/deploy.sh', `#!/usr/bin/env bash
 set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "\${BASH_SOURCE[0]}")/.." && pwd)"; cd "$REPO_ROOT"
 PROJECT="\${PROJECT:-${project}}"
-OBSUTIL="\${OBSUTIL:-/opt/data/bin/obsutil}"
-EP="\${OBS_ENDPOINT:-obs.cn-south-1.myhuaweicloud.com}"
-BUCKET="\${OBS_BUCKET:?请设置 OBS_BUCKET（如 obs://www-fmode.cn）}"
+OBSUTIL="\${OBSUTIL:-obsutil}"
+EP="\${OBS_ENDPOINT:-obs.<region>.myhuaweicloud.com}"
+BUCKET="\${OBS_BUCKET:?请设置 OBS_BUCKET（如 obs://my-bucket）}"
 # 凭据从环境注入；**AK/SK 不写进本文件**
 OBS_AK="\${OBS_AK:?set OBS_AK}"; OBS_SK="\${OBS_SK:?set OBS_SK}"
 PREFIX="dev/$PROJECT"

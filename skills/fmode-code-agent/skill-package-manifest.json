@@ -1,13 +1,13 @@
 {
   "name": "fmode-code-agent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "FmodeCode / Claude Code 独立技能包：纯 JS 网页版 Bot 智能体实现规则（浏览器 + Node 双兼容、无构建）。含 Agent/MCP/Skill 三层架构、LangGraph.js 浏览器无构建配方、浏览器端 MCP（Web Worker）、token/速度实测方法、自动部署。",
   "plugin": "fmode-code-agent",
   "skills": [
     "fmode-code-agent"
   ],
   "entrySkill": "fmode-code-agent",
-  "npmPackage": "skill-code-agent",
+  "npmPackage": "@fmode/skill-code-agent",
   "smokeCommand": "npm run smoke",
   "installCommand": "node skills/fmode-code-agent/scripts/install.mjs install --force",
   "workspaceInstallCommand": "node skills/fmode-code-agent/scripts/install-rules.mjs .",
@@ -15,5 +15,6 @@
   "globalSkillPath": "~/.claude/skills/fmode-code-agent/SKILL.md",
   "installHint": "工作区安装规则：node skills/fmode-code-agent/scripts/install-rules.mjs . ，会写入 ./.claude/rules/。生成脚手架：node skills/fmode-code-agent/scripts/scaffold.mjs ./my-agent --project my-agent。规则来源优先级：--from > 本仓 .claude/rules > 内置最小集。依赖：@langchain/langgraph@1.5.1 等（浏览器走 importmap，Node 走 npm）。",
   "copyright": "Copyright (c) 2026 未来飞马 Fmode",
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "summary": "数字人开发基础规则技能：纯 JS 网页版 Agent（Agent/MCP/Skill 三层）"
 }

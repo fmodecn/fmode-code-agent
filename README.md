@@ -1,5 +1,8 @@
 # fmode-code-agent · 纯 JS 网页版 Bot 智能体开发规则仓
 
+> **这是方便数字人（FmodeAgent / FmodeCode）进行项目开发的基础规则技能。**
+> 它把踩过的坑沉淀成硬性约束，让 AI 在生成代码时不重犯同类错误。
+
 > **未来飞马 — 让 AI 进化提前发生，让 AI 落地快人一步**
 
 `fmode-code-agent` 是 FMODE 组织下的 **智能体（Agent）开发规则仓库**：为「纯 JS（浏览器 + Node 双兼容、
@@ -13,7 +16,7 @@
 | 分层规则 | [`.claude/rules/`](./.claude/rules/) | 三层架构、MCP/Skill、LangGraph 无构建、实测、部署、坑位逐篇规范 |
 | 全局技能 | [`skills/fmode-code-agent/`](./skills/fmode-code-agent/) | 给 AI 的智能体项目初始化技能 + 脚手架 |
 
-> 姊妹仓：**[fmode-code-lit](../fmode-code-lit)**（Lit 前端无构建规范）。
+> 姊妹仓：**[fmode-code-lit](https://github.com/fmodecn/fmode-code-lit)**（Lit 前端无构建规范）。
 > 前端细节以 lit 仓为准，智能体细节以本仓为准，两者可叠加使用。
 
 ## 一句话记住它
@@ -55,14 +58,17 @@ Agent（决策）   决定「这轮调不调工具、调哪个」。可换框架
 ## 用法
 
 ```bash
+# 0) 安装（npm）
+npm i @fmode/skill-code-agent          # 装到 node_modules，技能目录在 node_modules/@fmode/skill-code-agent/skills/
+
 # 1) 生成智能体骨架
-node skills/fmode-code-agent/scripts/scaffold.mjs ./my-agent --project my-agent
+node node_modules/@fmode/skill-code-agent/skills/fmode-code-agent/scripts/scaffold.mjs ./my-agent --project my-agent
 
 # 2) 给已有项目装规则
-node skills/fmode-code-agent/scripts/install-rules.mjs .
+node node_modules/@fmode/skill-code-agent/skills/fmode-code-agent/scripts/install-rules.mjs .
 
 # 3) 自检
-node skills/fmode-code-agent/scripts/smoke.mjs
+node node_modules/@fmode/skill-code-agent/skills/fmode-code-agent/scripts/smoke.mjs
 ```
 
 ## 四条铁律

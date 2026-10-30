@@ -1,5 +1,8 @@
 # fmode-code-agent · 纯 JS 网页版 Bot 智能体技能
 
+> **这是方便数字人（FmodeAgent / FmodeCode）进行项目开发的基础规则技能。**
+> 它把踩过的坑沉淀成硬性约束，让 AI 在生成代码时不重犯同类错误。
+
 > **未来飞马 — 让 AI 进化提前发生，让 AI 落地快人一步**
 
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-brightgreen.svg)](LICENSE)
@@ -30,13 +33,13 @@ token/速度**实测**，**提交后自动部署**。
 
 ```bash
 # 生成一个最小智能体骨架
-node skills/fmode-code-agent/scripts/scaffold.mjs ./my-agent --project my-agent
+node node_modules/@fmode/skill-code-agent/skills/fmode-code-agent/scripts/scaffold.mjs ./my-agent --project my-agent
 
 # 给已有项目装规则
-node skills/fmode-code-agent/scripts/install-rules.mjs .
+node node_modules/@fmode/skill-code-agent/skills/fmode-code-agent/scripts/install-rules.mjs .
 
 # 自检（含 scaffold 产物 + MCP 协议功能测试）
-node skills/fmode-code-agent/scripts/smoke.mjs
+node node_modules/@fmode/skill-code-agent/skills/fmode-code-agent/scripts/smoke.mjs
 ```
 
 ## 四条铁律
